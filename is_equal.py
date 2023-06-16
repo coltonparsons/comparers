@@ -7,7 +7,7 @@ TEST_VECTORS = json.load(sys.stdin)
 n_wrong = 0
 
 def is_equal(a, b):
-    return type(a) == type(b) and a == b
+    return [type(a), type(b)].count(bool) != 1 and a == b
 
 for test_vector in TEST_VECTORS:
     a, b, expected = test_vector

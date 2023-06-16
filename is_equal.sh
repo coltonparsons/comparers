@@ -6,7 +6,7 @@ function is_equal(){
 
 n_wrong=0
 
-jq -c '.[]' | while read test_vector; do
+while read test_vector; do
     a=$(jq '.[0]' <<<$test_vector)
     b=$(jq '.[1]' <<<$test_vector)
     expected=$(jq '.[2]' <<<$test_vector)
@@ -15,7 +15,7 @@ jq -c '.[]' | while read test_vector; do
         echo "Failed $test_vector"
         n_wrong=$[n_wrong+1]
     fi
-done
+done < <(jq -c '.[]')
 
 if [[ $n_wrong -eq 0 ]]; then
     echo "All passed."
