@@ -44,5 +44,5 @@ They can be tested by running:
 ./is_equal.xx <test.json
 ```
 
-At the moment [is_equal.js](./is_equal.js) uses `===` which passes 34 out of 42 tests in `test.json`.
+At the moment [is_equal.js](./is_equal.js) uses `===` which passes most tests but fails with equivalent objects.
 Can this be improved upon substantially?
