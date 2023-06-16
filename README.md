@@ -36,4 +36,13 @@ This behavior is reflected in [test.json](./test.json), where each row contains 
 
 ## The Challenge
 
-Is it possible to create a JavaScript function `is_equal` which reproduces this behavior?
+Is it possible to create a JavaScript function `is_equal(a, b)` which reproduces this behavior?
+This repo has a few examples of this in other languages ([is_equal.py](./is_equal.py), [is_equal.rb](./is_equal.rb), [is_equal.jq](./is_equal.jq)) where `is_equal()` is a minimal de-quirker or just a glorified wrapper around `==`.
+They can be tested by running:
+
+```sh
+./is_equal.xx <test.json
+```
+
+At the moment [is_equal.js](./is_equal.js) uses `===` which passes 34 out of 42 tests in `test.json`.
+Can this be improved upon substantially?
